@@ -5143,7 +5143,7 @@ function dead_db() {
 	}
 
 	// Otherwise, be terse.
-	wp_die( '<h1>' . __( 'Error establishing a database connection' ) . '</h1>', __( 'Database Error' ) );
+	wp_die( '<h1>' . __( 'Error establishing a database connection kkkkkkkkkkkkkkkkkkkkkkkkkk' ) . '</h1>', __( 'Database Error' ) );
 }
 
 /**
