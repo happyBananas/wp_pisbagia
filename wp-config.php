@@ -23,7 +23,7 @@
 define( 'DB_NAME', 'wp_pisbagia' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'pisj8776' );
 
 /** MySQL database password */
 define( 'DB_PASSWORD', '' );
