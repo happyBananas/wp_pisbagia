@@ -26,7 +26,7 @@ define( 'DB_NAME', 'pisj8776_wp_pisbagia' );
 define( 'DB_USER', 'pisj8776' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'l5U7@Tj2RRKUb&$g' );
+define( 'DB_PASSWORD', '' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost:3306' );
