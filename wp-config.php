@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'pisj8776_wp_pisbagia' );
 
 /** MySQL database username */
-define( 'DB_USER', 'pisj8776' );
+define( 'DB_USER', 'pisj8776_happy_bananas' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'pisj8776_happy_bananas_123' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost:3306' );
@@ -79,7 +79,7 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
