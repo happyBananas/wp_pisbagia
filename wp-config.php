@@ -18,24 +18,50 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'pisj8776_wp_pisbagia' );
+$server_name = $_SERVER['SERVER_NAME'];
 
-/** MySQL database username */
-define( 'DB_USER', 'pisj8776_happy_bananas' );
+switch($server_name){
+	case 'localhost':
+		// ** MySQL settings - You can get this info from your web host ** //
+		/** The name of the database for WordPress */
+		define( 'DB_NAME', 'wp_pisbagia' );
 
-/** MySQL database password */
-define( 'DB_PASSWORD', 'pisj8776_happy_bananas_123' );
+		/** MySQL database username */
+		define( 'DB_USER', 'root' );
 
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost:3306' );
+		/** MySQL database password */
+		define( 'DB_PASSWORD', '' );
 
-/** Database charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+		/** MySQL hostname */
+		define( 'DB_HOST', 'localhost:3306' );
 
-/** The database collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+		/** Database charset to use in creating database tables. */
+		define( 'DB_CHARSET', 'utf8' );
+
+		/** The database collate type. Don't change this if in doubt. */
+		define( 'DB_COLLATE', '' );
+	break;
+
+	default:
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define( 'DB_NAME', 'pisj8776_wp_pisbagia' );
+
+	/** MySQL database username */
+	define( 'DB_USER', 'pisj8776_happy_bananas' );
+
+	/** MySQL database password */
+	define( 'DB_PASSWORD', 'pisj8776_happy_bananas_123' );
+
+	/** MySQL hostname */
+	define( 'DB_HOST', 'localhost:3306' );
+
+	/** Database charset to use in creating database tables. */
+	define( 'DB_CHARSET', 'utf8' );
+
+	/** The database collate type. Don't change this if in doubt. */
+	define( 'DB_COLLATE', '' );
+}
 
 /**#@+
  * Authentication unique keys and salts.
