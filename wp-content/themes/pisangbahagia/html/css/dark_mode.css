@@ -1,0 +1,8 @@
+/* --------------------------------------------------DARK MODE ----- */
+.mode-dark{
+    filter: invert(94%) hue-rotate(100deg) brightness(100%) !important;
+}
+
+.mode-bright{
+    filter: invert(100%) hue-rotate(265deg) brightness(100%) !important;
+}

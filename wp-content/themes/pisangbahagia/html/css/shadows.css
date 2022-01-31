@@ -1,0 +1,49 @@
+
+
+.shdw{
+    box-shadow: 0px 0px 7px 0px var(--color_shadow) !important;    
+}
+
+.shdw-top{
+    box-shadow: 0px -1px 7px 0px var(--color_shadow) !important;
+}
+
+.shdw-right{
+    box-shadow: 1px 0px 7px 0px var(--color_shadow) !important;
+}
+
+.shdw-bottom{
+    box-shadow: 0px 1px 7px 0px var(--color_shadow) !important;   
+}
+
+.shdw-left{
+    box-shadow: -1px 0px 4px 0px var(--color_shadow) !important;
+}
+
+
+
+
+
+.shdw-darker{
+    box-shadow: 0px 0px 7px 0px var(--color_shadow_darker);    
+}
+
+.shdw-top-darker{
+    box-shadow: 0px -1px 7px 0px var(--color_shadow_darker);
+}
+
+.shdw-right-darker{
+    box-shadow: 1px 0px 7px 0px var(--color_shadow_darker);
+}
+
+.shdw-bottom-darker{
+    box-shadow: 0px 3px 5px 0px var(--color_shadow_darker);   
+}
+
+.shdw-left-darker{
+    box-shadow: -1px 0px 7px 0px var(--color_shadow_darker);
+}
+
+.shdw-darker-in{
+    box-shadow: inset 0px 0px 7px 0px var(--color_shadow_darker);    
+}
