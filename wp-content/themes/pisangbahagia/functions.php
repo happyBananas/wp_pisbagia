@@ -30,13 +30,13 @@ function pb_regist_menu(){
 add_action( 'init', 'pb_regist_menu' );
 
 //add active menu on current page
-function special_nav_class($classes, $item){
+function special_nav_class($classes, $item, $args){
      if( in_array('current-menu-item', $classes) ){
              $classes[] = 'active ';
      }
      return $classes;
 }
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 4);
 
 //support theme
 function pb_support_theme(){

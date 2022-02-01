@@ -1,6 +1,4 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
     
     <div class="container main">
         <ul class="breadcrumb anim-loader-skeleton">
@@ -110,6 +108,4 @@ get_header();
             </div>
         </div>
     </div>
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>

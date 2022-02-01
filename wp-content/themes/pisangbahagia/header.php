@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<?=bloginfo('template_url');?>/assets/img/logo_pisangbahagia_gurita_20_1.png">
     <?php wp_head(); ?>
-    <title>XXX</title>
 </head>
 <body style="overflow-y: hidden;">
     <header class="container full cont-top"> 
@@ -26,8 +25,9 @@
             <div class="navbar ft nav-link">
                 <?php
                     $menu = array(
-                        'menu' => 'primary_menu',
-                        'menu_class' => ''
+                        'menu' => 'primary',
+                        'menu_class' => '',
+                        'theme_location' => 'primary_menu'
                     );
                     wp_nav_menu( $menu );
                 ?>
