@@ -32,6 +32,11 @@ html, body, h1, ul, li, form{
     box-sizing: border-box;
 }
 
+ol{
+    margin-block-start: 0;
+    padding-inline-start: 20px;
+}
+
 img{
     max-width: 100%;
     height: auto;
@@ -865,6 +870,48 @@ li.pagi-item{
 }
 
 .btn-pagi-link.no-link:hover{
+    background-color: #fff;
+    color: #222;
+}
+
+/* Pagination-wp */
+.pagination .nav-links a.page-numbers,
+.pagination .nav-links .page-numbers.current{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+.pagination .nav-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.5em;
+}
+
+.pagination .nav-links .page-numbers{
+    padding: 0.5em 0.7em;
+    margin: 5px;
+    border: 1px solid #222;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: 700;
+    background-color: #fff;
+    color: #222;
+    transition: 0.3s ease;
+}
+
+.pagination .nav-links .page-numbers:hover, 
+.pagination .nav-links .page-numbers.current{
+    background-color: #222;
+    color: #eee;
+}
+
+.pagination .nav-links .page-numbers.dots{
+    cursor: auto;
+}
+
+.pagination .nav-links .page-numbers.dots:hover{
     background-color: #fff;
     color: #222;
 }
@@ -2041,6 +2088,28 @@ a.article-author:hover{
         color: #222;
         transition: 0.3s ease;
     }
+
+    /* Pagination-wp */
+    .pagination .nav-links{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1em;
+    }
+
+    .pagination .nav-links .page-numbers{
+        padding: 0.4em 0.6em;
+        margin: 4px;
+        border: 1px solid #222;
+        border-radius: 0;
+        cursor: pointer;
+        font-size: 0.8em;
+        font-weight: 700;
+        background-color: #fff;
+        color: #222;
+        transition: 0.3s ease;
+    }
+
 
     .btn-sd-cat{
         padding: 5px 10px;

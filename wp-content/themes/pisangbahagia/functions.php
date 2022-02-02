@@ -29,6 +29,22 @@ function pb_regist_menu(){
 }
 add_action( 'init', 'pb_regist_menu' );
 
+//registration menu location
+function pb_regist_sidebar(){
+    $args = array(
+        'before_title' => '',
+        'after_title' => '',
+        'before_widget' => '',
+        'after_widget' => '',
+        'name' => 'main-sidebar',
+        'id' => 'sidebar-1',
+        'description' => 'Sidebar in main container'
+    );
+
+    register_sidebar( $args );
+}
+add_action( 'widgets_init', 'pb_regist_sidebar' );
+
 //add active menu on current page
 function special_nav_class($classes, $item, $args){
      if( in_array('current-menu-item', $classes) ){

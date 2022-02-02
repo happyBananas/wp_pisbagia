@@ -71,12 +71,20 @@
                 </div>
 
                 <?php
-                    if( have_posts() ):                    
-                        while( have_posts() ):
-                            the_post();
+                    $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+                    $args = array(
+                        'posts_per_page' => get_option('posts_per_page'),
+                        'paged' => $page
+                    );
+
+                    $query = new WP_Query( $args );
+
+                    if( $query->have_posts() ):                    
+                        while( $query->have_posts() ):
+                            $query->the_post();
 
                             get_template_part( 'template-parts/content', 'main' );
-
+                            
                         endwhile;
                     else:
                 ?>
@@ -98,7 +106,12 @@
                     </div>    
                 <?php 
                     endif;
-                ?>                       
+                ?>
+
+                <?php get_template_part( 'template-parts/pagination' ); ?>   
+                         
+                <?php wp_reset_postdata(); ?>            
+                
             </div>
             <div class="side-content">   
                 <div class="weather">
@@ -142,10 +155,10 @@
                         <li><a href="#"><button type="button" class="ft btn-sd-cat">#Kerja</button></a></li>
                         <li><a href="#"><button type="button" class="ft btn-sd-cat">#Kuliah</button></a></li>
                     </ul>   
-                </div>                                  
+                </div>
+                <?php dynamic_sidebar('sidebar-1');?>
             </div>
         </div>
     </div>
 
-    <!-- <script>document.querySelectorAll('.wrap-ctn-content>p img').forEach(function(e){e.remove()});</script> -->
 <?php get_footer(); ?>

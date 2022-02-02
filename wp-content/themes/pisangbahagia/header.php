@@ -27,7 +27,8 @@
                     $menu = array(
                         'menu' => 'primary',
                         'menu_class' => '',
-                        'theme_location' => 'primary_menu'
+                        'theme_location' => 'primary_menu',
+                        'echo' => true
                     );
                     wp_nav_menu( $menu );
                 ?>
