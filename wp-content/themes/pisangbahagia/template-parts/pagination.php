@@ -7,5 +7,3 @@
             'next_text' => __( '<i class="fa fa-chevron-right"></i>', 'textdomain' ),
         )
     );
-
-    

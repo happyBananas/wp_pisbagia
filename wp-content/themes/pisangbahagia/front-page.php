@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <div class="container main">
-        <!-- <div class="banner">
+        <div class="banner">
             <div class="banner-wrap lg anim-loader-skeleton" id="banner-wrap-lg">
                 <div class="banner-arrow">
                     <i class="fa fa-chevron-left" id="arrow-left"></i>
@@ -58,7 +58,7 @@
                     </a>
                 </div>
             </div>
-        </div> -->
+        </div>
         <div class="content">
             <div class="main-content">
                 <div class="header-section">
@@ -71,13 +71,28 @@
                 </div>
 
                 <?php
-                    $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+                    //$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+                    // if ( get_query_var( 'paged' ) ) {
+                    //     $paged = get_query_var( 'paged' );
+                    // }elseif ( get_query_var( 'page' ) ) {
+                    //     $paged = get_query_var( 'page' );
+                    // }else {
+                    //     $paged = 1;
+                    // }
+
+                    $paged = get_query_var( 'page' ) ? get_query_var( 'page' ) : 1;
+
                     $args = array(
                         'posts_per_page' => get_option('posts_per_page'),
-                        'paged' => $page
+                        'paged' => $paged
                     );
 
                     $query = new WP_Query( $args );
+
+                    // echo "<pre>";
+                    // print_r( $query );
+                    // echo "<pre>";
 
                     if( $query->have_posts() ):
                         while( $query->have_posts() ):
@@ -107,8 +122,22 @@
                 <?php
                     endif;
                 ?>
+                <nav class="navigation pagination" role="navigation" aria-label="Posts">
+		            <h2 class="screen-reader-text">Posts navigation</h2>
+                        <div class="nav-links">
 
-                <?php get_template_part( 'template-parts/pagination' ); ?>
+                            <?php
+                                echo paginate_links( array(
+                                        'total' => $query->max_num_pages,
+                                        'mid_size' => 2,
+                                        'current' => $paged,
+                                        'prev_text' => __( '<i class="fa fa-chevron-left"></i>', 'textdomain' ),
+                                        'next_text' => __( '<i class="fa fa-chevron-right"></i>', 'textdomain' ),
+                                    )
+                                );
+                            ?>
+                        </div>
+                </nav>
 
                 <?php wp_reset_postdata(); ?>
 

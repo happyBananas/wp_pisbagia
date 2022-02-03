@@ -1,74 +1,41 @@
 <?php get_header(); ?>
 
     <div class="container main">
-        <!-- <div class="banner">
-            <div class="banner-wrap lg anim-loader-skeleton" id="banner-wrap-lg">
-                <div class="banner-arrow">
-                    <i class="fa fa-chevron-left" id="arrow-left"></i>
-                    <i class="fa fa-chevron-right" id="arrow-right"></i>
-                </div>
-                <div class="banner-content ">
-                    <a href="article.html">
-                        <div class="ft banner-ctn lg">
-                            <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates facilis iste et.</p>
-                            <small class="ft-po m-0 ft-b-4 ft-sz-13 cl-ligrey">Lorem Ipsum, 25 Januari 2020 19:00</small>
-                        </div>
-                        <img class="banner-img-lg" src="<?=bloginfo('template_url');?>/assets/img/1.jpg">
-                    </a>
-                </div>
-                <div class="banner-content">
-                    <a href="article.html">
-                        <div class="ft banner-ctn lg">
-                            <p class="m-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                            <small class="ft-po m-0 ft-b-4 ft-sz-13 cl-ligrey">Lorem , 25 Januari 2020 19:00</small>
-                        </div>
-                        <img class="banner-img-lg" src="<?=bloginfo('template_url');?>/assets/img/2.jpg">
-                    </a>
-                </div>
-                <div class="banner-content">
-                    <a href="article.html">
-                        <div class="ft banner-ctn lg">
-                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quae ipsam eum reiciendis eos!</p>
-                            <small class="ft-po m-0 ft-b-4 ft-sz-13 cl-ligrey">Lorem , 25 Januari 2020 19:00</small>
-                        </div>
-                        <img class="banner-img-lg" src="<?=bloginfo('template_url');?>/assets/img/3.jpg">
-                    </a>
-                </div>
-                <div class="banner-content">
-                    <a href="article.html">
-                        <div class="ft banner-ctn lg">
-                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos facilis ratione cupiditate.</p>
-                            <small class="ft-po m-0 ft-b-4 ft-sz-13 cl-ligrey">Lorem , 25 Januari 2020 19:00</small>
-                        </div>
-                        <img class="banner-img-lg" src="<?=bloginfo('template_url');?>/assets/img/4.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="banner-wrap sm">
-                <div class="banner-content-half anim-loader-skeleton">
-                    <a href="article.html">
-                        <p class="ft banner-ctn sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt?</p>
-                        <img class="banner-img-sm" src="<?=bloginfo('template_url');?>/assets/img/5.jpg">
-                    </a>
-                </div>
-                <div class="banner-content-half anim-loader-skeleton">
-                    <a href="article.html">
-                        <p class="ft banner-ctn sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptatibus velit culpa.</p>
-                        <img class="banner-img-sm" src="<?=bloginfo('template_url');?>/assets/img/6.jpg">
-                    </a>
-                </div>
-            </div>
-        </div> -->
         <div class="content">
             <div class="main-content">
-                <div class="header-section">
-                    <div class="hs-p">
-                        <span class="ft ft-header-section">Terbaru</span>
+                <ul class="breadcrumb nim-loader-skeleton">
+                    <li class="breadcrumb-item"><a href="<?=home_url();?>">Beranda</a></li>
+
+                    <?php if( is_category() ): ?>
+                        <li class="breadcrumb-item"><a href="<?=home_url().'/kategori';?>">Kategori</a></li>
+                        <li class="breadcrumb-item active"><?=single_cat_title();?></li>
+                    <?php endif;?>
+
+                    <?php if( is_author() ): ?>
+                        <li class="breadcrumb-item">Author /&nbsp;</li>
+                        <li class="breadcrumb-item active"><?=get_the_author_meta( 'first_name' );?></li>
+                    <?php endif;?>
+
+                </ul>
+
+                <?php if( is_category() ): ?>
+                    <h2 class="ft ft ft-page-section m-auto py-1"><?=single_cat_title();?></h2>
+                <?php endif;?>
+
+                <?php if( is_author() ): ?>
+                    <div class="writer-banner">
+                        <div class="d-flex justify-content-center">
+                            <div class="anim-loader-skeleton">
+                               <?=get_avatar( get_the_author_meta( 'ID' ), '', '', '', array( 'class' => 'article-pp') );?>
+                            </div>
+                        </div>
+                        <div class="px-5 writer-info">
+                            <div class="anim-loader-skeleton"><h2 class="ft m-0"><?=get_the_author_meta( 'first_name' )." ".get_the_author_meta( 'last_name' );?></h2></div>
+                            <div class="anim-loader-skeleton"><small class="ft-ro cl-lidarkred m-0"><?=count_user_posts( get_the_author_meta( 'ID' ) ) ?>&nbsp;Artikel</small></div>
+                            <div class="anim-loader-skeleton"><small class="ft cl-grey">" <?=get_the_author_meta( 'description' );?> "</small></div>
+                        </div>
                     </div>
-                    <div class="hs-bar">
-                        <div class="bar"></div>
-                    </div>
-                </div>
+                <?php endif;?>
 
                 <?php
                     $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
@@ -77,13 +44,16 @@
                         'paged' => $page
                     );
 
+                    if( is_category() ) { $args = array( 'category_name' => single_cat_title('', false) ); }
+                    if( is_author() ) { $args = array( 'author' => get_the_author_meta( 'ID' ) ); }
+
                     $query = new WP_Query( $args );
 
                     if( $query->have_posts() ):
                         while( $query->have_posts() ):
                             $query->the_post();
 
-                            get_template_part( 'template-parts/content', 'main' );
+                            get_template_part( 'template-parts/content', 'archive' );
 
                         endwhile;
                     else:
@@ -114,8 +84,6 @@
 
             </div>
             <div class="side-content">
-                <div class="weather">
-                </div>
                 <div class="trending">
                     <div class="header-section anim-loader-skeleton">
                         <div class="hs-p">
