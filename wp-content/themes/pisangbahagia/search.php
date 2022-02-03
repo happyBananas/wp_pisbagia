@@ -1,59 +1,28 @@
 <?php get_header(); ?>
 
     <div class="container main">
+        <ul class="breadcrumb nim-loader-skeleton">
+            <li class="breadcrumb-item"><a href="<?=home_url();?>">Beranda</a></li>
+            <li class="breadcrumb-item active">Search Result</li>
+        </ul>
         <div class="content">
             <div class="main-content">
-                <ul class="breadcrumb nim-loader-skeleton">
-                    <li class="breadcrumb-item"><a href="<?=home_url();?>">Beranda</a></li>
-
-                    <?php if( is_category() ): ?>
-                        <li class="breadcrumb-item"><a href="<?=home_url().'/kategori';?>">Kategori</a></li>
-                        <li class="breadcrumb-item active"><?=single_cat_title();?></li>
-                    <?php endif;?>
-
-                    <?php if( is_author() ): ?>
-                        <li class="breadcrumb-item">Author /&nbsp;</li>
-                        <li class="breadcrumb-item active"><?=get_the_author_meta( 'first_name' );?></li>
-                    <?php endif;?>
-
-                </ul>
-
-                <?php if( is_category() ): ?>
-                    <h2 class="ft ft ft-page-section m-auto py-1"><?=single_cat_title();?></h2>
-                <?php endif;?>
-
-                <?php if( is_author() ): ?>
-                    <div class="writer-banner">
-                        <div class="d-flex justify-content-center">
-                            <div class="avatar-div anim-loader-skeleton">
-                               <?=get_avatar( get_the_author_meta( 'ID' ), '', '', '', array( 'class' => 'article-pp') );?>
-                            </div>
-                        </div>
-                        <div class="px-5 writer-info">
-                            <div class="anim-loader-skeleton"><h2 class="ft m-0"><?=get_the_author_meta( 'first_name' )." ".get_the_author_meta( 'last_name' );?></h2></div>
-                            <div class="anim-loader-skeleton"><small class="ft-ro cl-lidarkred m-0"><?=count_user_posts( get_the_author_meta( 'ID' ) ) ?>&nbsp;Artikel</small></div>
-                            <div class="anim-loader-skeleton"><small class="ft cl-grey">" <?=get_the_author_meta( 'description' );?> "</small></div>
-                        </div>
-                    </div>
-                <?php endif;?>
-
+                <h2 class="ft ft-page-section m-auto py-1">Search Result</h2>
+                <p class="ft-po m-auto py-1"><?='Search Result for "' . get_search_query() . '"'?></p>
+                <div class="writer-banner">
+                    <form method="get" class="search-form-page" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                        <input type="text" name="s" class="input-search-page" value="<?=get_search_query()?get_search_query():''?>" placeholder="Cari Disini..."/>
+                        <button type="submit" class="btn-nav-search-page">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
                 <?php
-                    $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-                    $args = array(
-                        'posts_per_page' => get_option('posts_per_page'),
-                        'paged' => $page
-                    );
+                    if( have_posts() ):
+                        while( have_posts() ):
+                            the_post();
 
-                    if( is_category() ) { $args = array( 'category_name' => single_cat_title('', false) ); }
-                    if( is_author() ) { $args = array( 'author' => get_the_author_meta( 'ID' ) ); }
-
-                    $query = new WP_Query( $args );
-
-                    if( $query->have_posts() ):
-                        while( $query->have_posts() ):
-                            $query->the_post();
-
-                            get_template_part( 'template-parts/content', 'archive' );
+                            get_template_part( 'template-parts/content', 'main' );
 
                         endwhile;
 
@@ -62,11 +31,10 @@
                         get_template_part( 'template-parts/content', '404' );
 
                     endif;
+
                 ?>
 
                 <?php get_template_part( 'template-parts/pagination' ); ?>
-
-                <?php wp_reset_postdata(); ?>
 
             </div>
             <div class="side-content">
@@ -110,7 +78,6 @@
                         <li><a href="#"><button type="button" class="ft btn-sd-cat">#Kuliah</button></a></li>
                     </ul>
                 </div>
-                <?php dynamic_sidebar('sidebar-1');?>
             </div>
         </div>
     </div>

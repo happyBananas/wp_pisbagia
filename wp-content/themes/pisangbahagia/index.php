@@ -86,25 +86,11 @@
                             get_template_part( 'template-parts/content', 'main' );
 
                         endwhile;
+
                     else:
-                ?>
-                    <div class="list-main-content">
-                        <a href="article.html" class="anim-loader-skeleton">
-                            <img src="<?=bloginfo('template_url');?>/assets/img/image404.png">
-                        </a>
-                        <div class="wrap-media-content">
-                            <div class="wrap-ctn-header anim-loader-skeleton">
-                                <a href="#" class="ctn-header">Title of The Post</a>
-                            </div>
-                            <div class="wrap-ctn-info anim-loader-skeleton">
-                                <p class="ft ctn-info"><a href="#" class="ft ctn-info-cat">Author</a> / Date / <a href="#" class="ft ctn-info-cat">#Archives</a></p>
-                            </div>
-                            <div class="wrap-ctn-content anim-loader-skeleton">
-                                <p class="ft ctn-content">This section will be a place for the post content</p>
-                            </div>
-                        </div>
-                    </div>
-                <?php
+
+                        get_template_part( 'template-parts/content', '404' );
+
                     endif;
                 ?>
 

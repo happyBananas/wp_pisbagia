@@ -427,6 +427,42 @@ html, body{
     font-size: 1em;
 }
 
+.search-form-page{
+    width: 100%;
+    display: flex;
+    padding: 10px 0px;
+    justify-content: start;
+}
+
+.input-search-page{
+    padding: 5px 10px;
+    box-sizing: border-box;
+    /* border: 1px solid #ddd; */
+    border: 1px solid #ddd;
+    font-size: 1em;
+    flex: 1 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-nav-search-page{
+    height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border:none;
+    border-radius: 0px;
+    background-color: #222;
+    color: #eee;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-nav-search-page:hover{
+    background-color: #c73d3d;
+    color: #fff;
+    cursor: pointer;
+}
+
+
 .btn-nav-bars{
     height: 100%;
     margin: 36.5px 10px 0 0;
@@ -1042,6 +1078,7 @@ li.breadcrumb-item a:hover{
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .article-pp{
@@ -1101,6 +1138,24 @@ li.breadcrumb-item a:hover{
 
 .btn-article-cat:hover{
     background-color: #222;
+}
+
+.avatar-div{
+    width: 70px !important;
+    height: 70px !important;
+    min-width: 70px;
+    min-height: 70px;
+}
+
+.avatar-img-div-article{
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.avatar-img-div-article img{
+    border-radius: 15px;
 }
 
 
@@ -1833,6 +1888,29 @@ a.article-author:hover{
 }
 
 @media only screen and (max-width: 425px){
+
+    .search-form-page{
+        width: 100%;
+        display: flex;
+        padding: 0px 0px;
+        justify-content: start;
+    }
+
+    .input-search-page{
+        padding: 5px 10px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        font-size: 0.8em;
+        flex: 1 auto;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn-nav-search-page{
+        height: 100%;
+        padding: 5px 8px;
+    }
+
+
     /* --------------------------------------------------CONTAINER -----*/
     .container{
         max-width: 425px;
@@ -2014,11 +2092,11 @@ a.article-author:hover{
 
     .wrap-ctn-header{
         width: 100%;
-        max-height: 55px;
+        max-height: 65px;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin-top: -0.1em;
-        margin-bottom: 0.2em;
+        margin-top: -0.2em;
+        margin-bottom: 0em;
         /* background-color: lightgrey; */
     }
 
@@ -2027,7 +2105,8 @@ a.article-author:hover{
         max-height: 17px;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin-bottom: 0.2em;
+        margin-top: 0.2em;
+        margin-bottom: 0.1em;
         /* background-color: lightpink; */
     }
 

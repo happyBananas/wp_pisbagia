@@ -63,6 +63,15 @@ function pb_support_theme(){
 }
 add_action( 'after_setup_theme', 'pb_support_theme' );
 
+//hapus tipe post tertentu dari hasil pencarian
+function remove_post_type_from_search() {
+    global $wp_post_types;
+
+    $wp_post_types['page']->exclude_from_search = true;
+    $wp_post_types['attachment']->exclude_from_search = true;
+}
+add_action('init', 'remove_post_type_from_search');
+
 //read_time
 function pb_read_time(){
     $total_words = str_word_count( get_the_content() );

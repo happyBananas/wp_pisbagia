@@ -19,7 +19,9 @@
                 <!-- div penulis, tanggal dan media sosial -->
                 <div class="article-head">
                     <div class="article-le-tp anim-loader-skeleton">
-                    <?=get_avatar( get_post()->post_author, '', '', '', array( 'class' => 'article-pp' )  );?>
+                        <div class="avatar-img-div-article">
+                            <?=get_avatar( get_post()->post_author, '', '', '', array( 'class' => 'article-pp' )  );?>
+                        </div>
                         <div class="article-au-ti-wrap">
                             <a href="<?=get_author_posts_url( $post->post_author )?>" class="ft-ro article-author active"><b><?=get_the_author_meta( 'user_firstname', get_post()->post_author )?>&nbsp;<?=get_the_author_meta( 'user_lastname', get_post()->post_author )?></b></a>
                             <p class="ft-ro article-time"><?=substr( get_post()->post_date, 0, 16 );?></p>

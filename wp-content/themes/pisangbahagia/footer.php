@@ -1,8 +1,8 @@
 
     <footer class="container full cont-bot bg-doff">
         <div class="footer">
-            <div class="foot-content">   
-                <!-- <p class="ft foot-heading">Follow Me:</p>                 
+            <div class="foot-content">
+                <!-- <p class="ft foot-heading">Follow Me:</p>
                 <div class="medsos-hoz">
                     <button type="button" class="medsos bg-doff">
                         <i class="fa fa-facebook-official cl-sfwhite"></i>
@@ -23,7 +23,7 @@
                 <p class="ft copyright">&#169; 2020 PisangBahagia.com</p>
                 <p class="ft copyright">All Rights Reserved</p>
             </div>
-            <div class="foot-content">   
+            <div class="foot-content">
                 <ul class="footer-static-sites">
                     <li><a href="#">&nbsp;Tentang Kami&nbsp;</a></li>
                     <li><a href="#">&nbsp;Kontak&nbsp;</a></li>
@@ -34,15 +34,15 @@
             </div>
         </div>
     </footer>
-    
+
     <div class="modal-search">
         <button class="btn-close-modal-top" type="button">
             <i class="fa fa-close"></i>
         </button>
-        <form action="search.html">
-            <input type="text" name="search" class="input-search-top" placeholder="Cari Disini..."/>
+        <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <input type="text" name="s" class="input-search-top" placeholder="Cari Disini..."/>
         </form>
-    </div>   
+    </div>
 
     <div class="modal-loading show">
         <div class="lds-facebook">
@@ -55,7 +55,7 @@
     <button type="button" class="btn-sroll-top">
         <i class="fa fa-angle-up" aria-hidden="true"></i>
     </button>
-    
+
     <?php wp_footer(); ?>
 </body>
 </html>
