@@ -1,64 +1,9 @@
 <?php get_header(); ?>
 
     <div class="container main">
-        <div class="banner">
-            <div class="banner-wrap lg anim-loader-skeleton" id="banner-wrap-lg">
-                <div class="banner-arrow">
-                    <i class="fa fa-chevron-left" id="arrow-left"></i>
-                    <i class="fa fa-chevron-right" id="arrow-right"></i>
-                </div>
-                <div class="banner-content ">
-                    <a href="article.html">
-                        <div class="ft banner-ctn lg">
-                            <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates facilis iste et.</p>
-                            <small class="ft-po m-0 ft-b-4 ft-sz-13 cl-ligrey">Lorem Ipsum, 25 Januari 2020 19:00</small>
-                        </div>
-                        <img class="banner-img-lg" src="<?=bloginfo('template_url');?>/assets/img/1.jpg">
-                    </a>
-                </div>
-                <div class="banner-content">
-                    <a href="article.html">
-                        <div class="ft banner-ctn lg">
-                            <p class="m-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                            <small class="ft-po m-0 ft-b-4 ft-sz-13 cl-ligrey">Lorem , 25 Januari 2020 19:00</small>
-                        </div>
-                        <img class="banner-img-lg" src="<?=bloginfo('template_url');?>/assets/img/2.jpg">
-                    </a>
-                </div>
-                <div class="banner-content">
-                    <a href="article.html">
-                        <div class="ft banner-ctn lg">
-                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quae ipsam eum reiciendis eos!</p>
-                            <small class="ft-po m-0 ft-b-4 ft-sz-13 cl-ligrey">Lorem , 25 Januari 2020 19:00</small>
-                        </div>
-                        <img class="banner-img-lg" src="<?=bloginfo('template_url');?>/assets/img/3.jpg">
-                    </a>
-                </div>
-                <div class="banner-content">
-                    <a href="article.html">
-                        <div class="ft banner-ctn lg">
-                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos facilis ratione cupiditate.</p>
-                            <small class="ft-po m-0 ft-b-4 ft-sz-13 cl-ligrey">Lorem , 25 Januari 2020 19:00</small>
-                        </div>
-                        <img class="banner-img-lg" src="<?=bloginfo('template_url');?>/assets/img/4.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="banner-wrap sm">
-                <div class="banner-content-half anim-loader-skeleton">
-                    <a href="article.html">
-                        <p class="ft banner-ctn sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt?</p>
-                        <img class="banner-img-sm" src="<?=bloginfo('template_url');?>/assets/img/5.jpg">
-                    </a>
-                </div>
-                <div class="banner-content-half anim-loader-skeleton">
-                    <a href="article.html">
-                        <p class="ft banner-ctn sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptatibus velit culpa.</p>
-                        <img class="banner-img-sm" src="<?=bloginfo('template_url');?>/assets/img/6.jpg">
-                    </a>
-                </div>
-            </div>
-        </div>
+
+        <?php get_template_part( 'template-parts/banner' );?>
+
         <div class="content">
             <div class="main-content">
                 <div class="header-section">
@@ -71,28 +16,15 @@
                 </div>
 
                 <?php
-                    //$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
-                    // if ( get_query_var( 'paged' ) ) {
-                    //     $paged = get_query_var( 'paged' );
-                    // }elseif ( get_query_var( 'page' ) ) {
-                    //     $paged = get_query_var( 'page' );
-                    // }else {
-                    //     $paged = 1;
-                    // }
-
                     $paged = get_query_var( 'page' ) ? get_query_var( 'page' ) : 1;
 
                     $args = array(
                         'posts_per_page' => get_option('posts_per_page'),
-                        'paged' => $paged
+                        'paged' => $paged,
+                        'offset' => $pb_banner_offset
                     );
 
                     $query = new WP_Query( $args );
-
-                    // echo "<pre>";
-                    // print_r( $query );
-                    // echo "<pre>";
 
                     if( $query->have_posts() ):
                         while( $query->have_posts() ):
@@ -108,22 +40,23 @@
 
                     endif;
                 ?>
+<!--
                 <nav class="navigation pagination" role="navigation" aria-label="Posts">
 		            <h2 class="screen-reader-text">Posts navigation</h2>
                         <div class="nav-links">
 
                             <?php
-                                echo paginate_links( array(
-                                        'total' => $query->max_num_pages,
-                                        'mid_size' => 2,
-                                        'current' => $paged,
-                                        'prev_text' => __( '<i class="fa fa-chevron-left"></i>', 'textdomain' ),
-                                        'next_text' => __( '<i class="fa fa-chevron-right"></i>', 'textdomain' ),
-                                    )
-                                );
+                                // echo paginate_links( array(
+                                //         'total' => $query->max_num_pages,
+                                //         'mid_size' => 2,
+                                //         'current' => $paged,
+                                //         'prev_text' => __( '<i class="fa fa-chevron-left"></i>', 'textdomain' ),
+                                //         'next_text' => __( '<i class="fa fa-chevron-right"></i>', 'textdomain' ),
+                                //     )
+                                // );
                             ?>
                         </div>
-                </nav>
+                </nav> -->
 
                 <?php wp_reset_postdata(); ?>
 

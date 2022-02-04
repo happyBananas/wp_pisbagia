@@ -680,17 +680,21 @@ html, body{
     width: 100%;
     height: 100%;
     position: relative;
-    filter: grayscale(40%) brightness(85%);
+    /* filter: grayscale(40%) brightness(85%) blur(1px); */
+    filter: grayscale(40%) brightness(60%) blur(0px);
     transition: 0.5s ease all;
 }
 
 .banner-content a{
     width: 100%;
+    display: flex;
+    background-color: #222;
 }
 
 .banner-content a:hover > .banner-img-lg,
 .banner-content-half a:hover > .banner-img-sm{
-    filter: grayscale(100%) brightness(50%);
+    /* filter: grayscale(100%) brightness(50%) blur(0px); */
+    filter: grayscale(00%) brightness(90%) blur(0px);
     transition: 0.5s ease all;
     transform: scale(1.1);
 }
@@ -1434,25 +1438,31 @@ a.ft-404:hover{
 }
 
 .banner-ctn{
+    width: 100%;
     margin: 0 auto;
     font-weight: 700;
-    text-align: center;
     position: absolute;
     z-index: 1;
     color: #fff;
-    top: 50%;
-    transform: translateY(-50%);
+    /* top: 50%;
+    transform: translateY(-50%); */
 }
 
 .banner-ctn.lg{
-    padding: 0 15px;
+    max-width: 625px;
+    padding: 0 20px;
     font-size: 1.6em;
     line-height: 1em;
+    bottom: 15px;
+    text-align: left;
 }
 
 .banner-ctn.sm{
     font-size: 1em;
     line-height: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
 }
 
 .banner-ctn-shop{
@@ -2337,8 +2347,12 @@ a.article-author:hover{
     }
 
     .banner-ctn.lg{
+        max-width: 375px;
+        padding: 0 15px;
+        bottom: 10px;
         font-size: 1.3em;
         line-height: 1.1em;
+
     }
 
     .banner-ctn.sm{

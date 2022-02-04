@@ -1,59 +1,49 @@
 <?php get_header(); ?>
 
     <div class="container main">
+
+        <?php get_template_part( 'template-parts/banner' );?>
+
         <div class="content">
             <div class="main-content">
-                <ul class="breadcrumb nim-loader-skeleton">
-                    <li class="breadcrumb-item"><a href="<?=home_url();?>">Beranda</a></li>
-
-                    <?php if( is_category() ): ?>
-                        <li class="breadcrumb-item"><a href="<?=home_url().'/kategori';?>">Kategori</a></li>
-                        <li class="breadcrumb-item active"><?=single_cat_title();?></li>
-                    <?php endif;?>
-
-                    <?php if( is_author() ): ?>
-                        <li class="breadcrumb-item">Author /&nbsp;</li>
-                        <li class="breadcrumb-item active"><?=get_the_author_meta( 'first_name' );?></li>
-                    <?php endif;?>
-
-                </ul>
-
-                <?php if( is_category() ): ?>
-                    <h2 class="ft ft ft-page-section m-auto py-1"><?=single_cat_title();?></h2>
-                <?php endif;?>
-
-                <?php if( is_author() ): ?>
-                    <div class="writer-banner">
-                        <div class="d-flex justify-content-center">
-                            <div class="avatar-div anim-loader-skeleton">
-                               <?=get_avatar( get_the_author_meta( 'ID' ), '', '', '', array( 'class' => 'article-pp') );?>
-                            </div>
-                        </div>
-                        <div class="px-5 writer-info">
-                            <div class="anim-loader-skeleton"><h2 class="ft m-0"><?=get_the_author_meta( 'first_name' )." ".get_the_author_meta( 'last_name' );?></h2></div>
-                            <div class="anim-loader-skeleton"><small class="ft-ro cl-lidarkred m-0"><?=count_user_posts( get_the_author_meta( 'ID' ) ) ?>&nbsp;Artikel</small></div>
-                            <div class="anim-loader-skeleton"><small class="ft cl-grey">" <?=get_the_author_meta( 'description' );?> "</small></div>
-                        </div>
+                <div class="header-section">
+                    <div class="hs-p">
+                        <span class="ft ft-header-section">Terbaru</span>
                     </div>
-                <?php endif;?>
+                    <div class="hs-bar">
+                        <div class="bar"></div>
+                    </div>
+                </div>
 
                 <?php
-                    // $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-                    // $args = array(
-                    //     'posts_per_page' => get_option('posts_per_page'),
-                    //     'paged' => $page
-                    // );
+                    //$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
-                    // if( is_category() ) { $args = array( 'category_name' => single_cat_title('', false) ); }
-                    // if( is_author() ) { $args = array( 'author' => get_the_author_meta( 'ID' ) ); }
+                    // if ( get_query_var( 'paged' ) ) {
+                    //     $paged = get_query_var( 'paged' );
+                    // }elseif ( get_query_var( 'page' ) ) {
+                    //     $paged = get_query_var( 'page' );
+                    // }else {
+                    //     $paged = 1;
+                    // }
 
-                    // $query = new WP_Query( $args );
+                    $paged = get_query_var( 'page' ) ? get_query_var( 'page' ) : 1;
 
-                    if( have_posts() ):
-                        while( have_posts() ):
-                            the_post();
+                    $args = array(
+                        'posts_per_page' => get_option('posts_per_page'),
+                        'paged' => $paged
+                    );
 
-                            get_template_part( 'template-parts/content', 'archive' );
+                    $query = new WP_Query( $args );
+
+                    // echo "<pre>";
+                    // print_r( $query );
+                    // echo "<pre>";
+
+                    if( $query->have_posts() ):
+                        while( $query->have_posts() ):
+                            $query->the_post();
+
+                            get_template_part( 'template-parts/content', 'main' );
 
                         endwhile;
 
@@ -63,13 +53,29 @@
 
                     endif;
                 ?>
+                <nav class="navigation pagination" role="navigation" aria-label="Posts">
+		            <h2 class="screen-reader-text">Posts navigation</h2>
+                        <div class="nav-links">
 
-                <?php get_template_part( 'template-parts/pagination' ); ?>
+                            <?php
+                                echo paginate_links( array(
+                                        'total' => $query->max_num_pages,
+                                        'mid_size' => 2,
+                                        'current' => $paged,
+                                        'prev_text' => __( '<i class="fa fa-chevron-left"></i>', 'textdomain' ),
+                                        'next_text' => __( '<i class="fa fa-chevron-right"></i>', 'textdomain' ),
+                                    )
+                                );
+                            ?>
+                        </div>
+                </nav>
 
-                <?php //wp_reset_postdata(); ?>
+                <?php wp_reset_postdata(); ?>
 
             </div>
             <div class="side-content">
+                <div class="weather">
+                </div>
                 <div class="trending">
                     <div class="header-section anim-loader-skeleton">
                         <div class="hs-p">

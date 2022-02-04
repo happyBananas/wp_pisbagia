@@ -4,8 +4,9 @@ const toogle_btn = document.querySelector('.toogle.view-mode span');
 
 const img = document.getElementsByTagName('img');
 const footer = document.getElementsByTagName('footer');
-const ft_banner_lg = document.querySelectorAll('p.banner-ctn.lg');
-const ft_banner_sm = document.querySelectorAll('p.banner-ctn.sm');
+const ft_banner_lg = document.querySelectorAll('.banner-ctn.lg p');
+const ft_banner_lg_sm = document.querySelectorAll('.banner-ctn.lg small');
+const ft_banner_sm = document.querySelectorAll('.banner-ctn.sm');
 const modal_search = document.querySelector('.modal-search');
 const modal_loading = document.querySelector('.modal-loading');
 
@@ -24,6 +25,10 @@ if(localStorage.getItem('view_mode')==='dark'){
         });
 
         Array.from(ft_banner_lg).forEach(e => {
+            e.classList.toggle('mode-bright');
+        });
+
+        Array.from(ft_banner_lg_sm).forEach(e => {
             e.classList.toggle('mode-bright');
         });
 
@@ -48,6 +53,10 @@ document.addEventListener('click', function(ev){
         });
 
         Array.from(ft_banner_lg).forEach(e => {
+            e.classList.toggle('mode-bright');
+        });
+
+        Array.from(ft_banner_lg_sm).forEach(e => {
             e.classList.toggle('mode-bright');
         });
 
