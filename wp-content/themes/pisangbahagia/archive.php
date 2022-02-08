@@ -1,22 +1,22 @@
 <?php get_header(); ?>
 
     <div class="container main">
+        <ul class="breadcrumb anim-loader-skeleton">
+            <li class="breadcrumb-item"><a href="<?=home_url();?>">Beranda</a></li>
+
+            <?php if( is_category() ): ?>
+                <li class="breadcrumb-item"><a href="<?=home_url().'/kategori';?>">Kategori</a></li>
+                <li class="breadcrumb-item active"><?=single_cat_title();?></li>
+            <?php endif;?>
+
+            <?php if( is_author() ): ?>
+                <li class="breadcrumb-item">Author /&nbsp;</li>
+                <li class="breadcrumb-item active"><?=get_the_author_meta( 'first_name' );?></li>
+            <?php endif;?>
+
+        </ul>
         <div class="content">
-            <div class="main-content">
-                <ul class="breadcrumb nim-loader-skeleton">
-                    <li class="breadcrumb-item"><a href="<?=home_url();?>">Beranda</a></li>
-
-                    <?php if( is_category() ): ?>
-                        <li class="breadcrumb-item"><a href="<?=home_url().'/kategori';?>">Kategori</a></li>
-                        <li class="breadcrumb-item active"><?=single_cat_title();?></li>
-                    <?php endif;?>
-
-                    <?php if( is_author() ): ?>
-                        <li class="breadcrumb-item">Author /&nbsp;</li>
-                        <li class="breadcrumb-item active"><?=get_the_author_meta( 'first_name' );?></li>
-                    <?php endif;?>
-
-                </ul>
+            <div class="main-content full">
 
                 <?php if( is_category() ): ?>
                     <h2 class="ft ft ft-page-section m-auto py-1"><?=single_cat_title();?></h2>
@@ -38,17 +38,6 @@
                 <?php endif;?>
 
                 <?php
-                    // $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-                    // $args = array(
-                    //     'posts_per_page' => get_option('posts_per_page'),
-                    //     'paged' => $page
-                    // );
-
-                    // if( is_category() ) { $args = array( 'category_name' => single_cat_title('', false) ); }
-                    // if( is_author() ) { $args = array( 'author' => get_the_author_meta( 'ID' ) ); }
-
-                    // $query = new WP_Query( $args );
-
                     if( have_posts() ):
                         while( have_posts() ):
                             the_post();
@@ -66,52 +55,16 @@
 
                 <?php get_template_part( 'template-parts/pagination' ); ?>
 
-                <?php //wp_reset_postdata(); ?>
-
             </div>
+
+            <?php if( is_active_sidebar( 'sidebar-1' ) ):?>
+
             <div class="side-content">
-                <div class="trending">
-                    <div class="header-section anim-loader-skeleton">
-                        <div class="hs-p">
-                            <p class="ft ft-header-section">Trending</p>
-                        </div>
-                        <div class="hs-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                    <ul class="trending-section anim-loader-skeleton">
-                        <li><span>1.</span><a href="#" class="ft ft-list-trend">Lorem ipsum dolor sit amet consectetur adipisicing.</a></li>
-                        <li><span>2.</span><a href="#" class="ft ft-list-trend">Lorem ipsum dolor sit.</a></li>
-                        <li><span>3.</span><a href="#" class="ft ft-list-trend">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo beatae numquam!</a></li>
-                        <li><span>4.</span><a href="#" class="ft ft-list-trend">Lorem ipsum dolor sit amet consectetur.</a></li>
-                        <li><span>5.</span><a href="#" class="ft ft-list-trend">Lorem ipsum dolor sit amet consectetur adipisicing.</a></li>
-                    </ul>
-                </div>
-                <div class="category">
-                    <div class="header-section anim-loader-skeleton">
-                        <div class="hs-p">
-                            <p class="ft ft-header-section">Kategori</p>
-                        </div>
-                        <div class="hs-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                    <ul class="category-section anim-loader-skeleton">
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Pemrograman</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Opini</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Sepak Bola</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Game</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#PHP</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Javascript</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Kehidupan</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Tanaman</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Traveling</button></a></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Kerja</button></a></li>
-                        <li><a href="#"><button type="button" class="ft btn-sd-cat">#Kuliah</button></a></li>
-                    </ul>
-                </div>
                 <?php dynamic_sidebar('sidebar-1');?>
             </div>
+
+            <?php endif;?>
+
         </div>
     </div>
 

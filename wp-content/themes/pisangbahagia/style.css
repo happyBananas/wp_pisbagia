@@ -216,12 +216,14 @@ html, body{
 .container{
     width: 100%;
     max-width: 950px;
-    margin: 1.5rem auto;
+    margin: 1rem auto;
     box-sizing: border-box;
 }
 
 .full{
-    max-width: 100%;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 1em auto;
 }
 
 .cont-top{
@@ -614,8 +616,8 @@ html, body{
     flex-direction: row;
     box-sizing: border-box;
     justify-content: space-between;
-    margin-top:-0.2em;
-    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    /* margin-bottom: 1rem; */
 }
 
 .banner-wrap{
@@ -1450,11 +1452,12 @@ a.ft-404:hover{
 
 .banner-ctn.lg{
     max-width: 625px;
-    padding: 0 20px;
+    padding: 20px 20px;
     font-size: 1.6em;
     line-height: 1em;
-    bottom: 15px;
+    bottom: 0px;
     text-align: left;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 60%, rgba(0,0,0,.7) 100%);
 }
 
 .banner-ctn.sm{
@@ -1537,6 +1540,7 @@ a.ft-404:hover{
 }
 
 .ctn-header:hover{
+    transition: 0.3s ease;
     color: #999;
 }
 
@@ -1968,7 +1972,7 @@ a.article-author:hover{
         flex-direction: column;
         box-sizing: border-box;
         justify-content: space-between;
-        /* margin-top:-1em; */
+        margin-top: 0;
         padding: 0 10px;
     }
 
@@ -2348,11 +2352,11 @@ a.article-author:hover{
 
     .banner-ctn.lg{
         max-width: 375px;
-        padding: 0 15px;
-        bottom: 10px;
+        padding: 15px;
+        bottom: 0;
         font-size: 1.3em;
         line-height: 1.1em;
-
+        background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 60%, rgba(0,0,0,.7) 100%);
     }
 
     .banner-ctn.sm{

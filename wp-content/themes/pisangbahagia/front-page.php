@@ -5,7 +5,7 @@
         <?php get_template_part( 'template-parts/banner' );?>
 
         <div class="content">
-            <div class="main-content">
+            <div class="main-content full">
                 <div class="header-section">
                     <div class="hs-p">
                         <span class="ft ft-header-section">Terbaru</span>
@@ -40,29 +40,15 @@
 
                     endif;
                 ?>
-<!--
-                <nav class="navigation pagination" role="navigation" aria-label="Posts">
-		            <h2 class="screen-reader-text">Posts navigation</h2>
-                        <div class="nav-links">
-
-                            <?php
-                                // echo paginate_links( array(
-                                //         'total' => $query->max_num_pages,
-                                //         'mid_size' => 2,
-                                //         'current' => $paged,
-                                //         'prev_text' => __( '<i class="fa fa-chevron-left"></i>', 'textdomain' ),
-                                //         'next_text' => __( '<i class="fa fa-chevron-right"></i>', 'textdomain' ),
-                                //     )
-                                // );
-                            ?>
-                        </div>
-                </nav> -->
 
                 <?php wp_reset_postdata(); ?>
 
             </div>
+
+            <?php if( is_active_sidebar( 'sidebar-1' ) ):?>
+
             <div class="side-content">
-                <div class="weather">
+                <!-- <div class="weather">
                 </div>
                 <div class="trending">
                     <div class="header-section anim-loader-skeleton">
@@ -103,9 +89,12 @@
                         <li><a href="#"><button type="button" class="ft btn-sd-cat">#Kerja</button></a></li>
                         <li><a href="#"><button type="button" class="ft btn-sd-cat">#Kuliah</button></a></li>
                     </ul>
-                </div>
-                <?php dynamic_sidebar('sidebar-1');?>
+                </div> -->
+                <?php get_sidebar( 'sidebar-1' ); ?>
             </div>
+
+            <?php endif;?>
+
         </div>
     </div>
 
