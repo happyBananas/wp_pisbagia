@@ -8,7 +8,7 @@
             </li>
         </ul>
         <div class="content">
-            <div class="main-content full">
+            <div class="main-content <?php echo is_active_sidebar( 'sidebar-1' ) ? '': 'full';?>">
                 <!-- judul artikel -->
                 <div class="anim-loader-skeleton">
                     <p class="ft article-title py-1">
@@ -75,9 +75,7 @@
 
             <?php if( is_active_sidebar( 'sidebar-1' ) ):?>
 
-            <div class="side-content">
-                <?php dynamic_sidebar('sidebar-1');?>
-            </div>
+            <?php get_sidebar( 'sidebar-1' ); ?>
 
             <?php endif;?>
 

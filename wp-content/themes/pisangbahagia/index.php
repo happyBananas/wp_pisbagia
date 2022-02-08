@@ -60,7 +60,7 @@
             </div>
         </div> -->
         <div class="content">
-            <div class="main-content full">
+            <div class="main-content <?php echo is_active_sidebar( 'sidebar-1' ) ? '': 'full';?>">
                 <div class="header-section">
                     <div class="hs-p">
                         <span class="ft ft-header-section">Terbaru</span>
@@ -102,9 +102,7 @@
 
             <?php if( is_active_sidebar( 'sidebar-1' ) ):?>
 
-            <div class="side-content">
-                <?php dynamic_sidebar('sidebar-1');?>
-            </div>
+            <?php get_sidebar( 'sidebar-1' ); ?>
 
             <?php endif;?>
 

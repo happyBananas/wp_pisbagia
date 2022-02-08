@@ -223,7 +223,7 @@ html, body{
 .full{
     max-width: 100% !important;
     width: 100% !important;
-    margin: 1em auto;
+    /* margin: 1em auto; */
 }
 
 .cont-top{
@@ -717,7 +717,7 @@ html, body{
     width: 665px;
     display: inline-block;
     box-sizing: border-box;
-    padding: 0 10px 0 0;
+    padding: 15px 10px 0 0;
 }
 
 .side-content{
@@ -725,7 +725,7 @@ html, body{
     width: 285px;
     display: inline-block;
     box-sizing: border-box;
-    padding: 0px 10px;
+    padding: 15px 10px;
     /* background-color: red; */
 }
 
@@ -1692,7 +1692,7 @@ a.article-author:hover{
 
     .full{
         max-width: 100%;
-        margin: 1em auto;
+        /* margin: 1em auto; */
     }
 
     .cont-top{
@@ -1869,7 +1869,7 @@ a.article-author:hover{
         width: 100%;
         max-width: 768px;
         box-sizing: border-box;
-        margin-top: 1.5em;
+        /* margin-top: 1.5em; */
         padding: 0 10px;
         display: inline-block;
     }
@@ -1934,7 +1934,7 @@ a.article-author:hover{
 
     .full{
         max-width: 100%;
-        margin: 1em auto;
+        /* margin: 1em auto; */
     }
 
     .cont-top{

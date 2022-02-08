@@ -6,7 +6,7 @@
             <li class="breadcrumb-item active">Search Result</li>
         </ul>
         <div class="content">
-            <div class="main-content full">
+            <div class="main-content <?php echo is_active_sidebar( 'sidebar-1' ) ? '': 'full';?>">
                 <h2 class="ft ft-page-section m-auto py-1">Search Result</h2>
                 <p class="ft-po m-auto py-1"><?='Search Result for "' . get_search_query() . '"'?></p>
                 <div class="writer-banner">
@@ -40,9 +40,7 @@
 
             <?php if( is_active_sidebar( 'sidebar-1' ) ):?>
 
-            <div class="side-content">
-                <?php dynamic_sidebar('sidebar-1');?>
-            </div>
+            <?php get_sidebar( 'sidebar-1' ); ?>
 
             <?php endif;?>
 
