@@ -12,19 +12,21 @@ class Pisgia_weather_widget extends WP_Widget {
     }
 
     public function widget( $args, $instance ) {
-        wp_enqueue_script('js-weather', get_template_directory_uri() . '/assets/js/weather.js', array(), false, true);
+        if( is_front_page() ){
+            wp_enqueue_script('js-weather', get_template_directory_uri() . '/assets/js/weather.js', array(), false, true);
 
-        $title = apply_filters( 'widget_title', $instance['title'] );
-        echo $args['before widget'];
+            $title = apply_filters( 'widget_title', $instance['title'] );
+            echo $args['before widget'];
 
-        if ( ! empty ( $title ) ){
-            echo $args['before_title'] . $title . $args['after_title'];
+            if ( ! empty ( $title ) ){
+                echo $args['before_title'] . $title . $args['after_title'];
+            }
+
+            // echo __( 'Greetings from Hostinger.com!', 'pisgia_weather_widget_domain' );
+            echo "<div class='weather'></div>";
+
+            echo $args['after_widget'];
         }
-
-        // echo __( 'Greetings from Hostinger.com!', 'pisgia_weather_widget_domain' );
-        echo "<div class='weather'></div>";
-
-        echo $args['after_widget'];
     }
 
     public function form( $instance ) {
