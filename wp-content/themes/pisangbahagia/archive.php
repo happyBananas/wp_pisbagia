@@ -15,14 +15,8 @@
             <?php endif;?>
 
         </ul>
-        <div class="content">
-            <div class="main-content <?php echo is_active_sidebar( 'sidebar-1' ) ? '': 'full';?>">
 
-                <?php if( is_category() ): ?>
-                    <h2 class="ft ft ft-page-section m-auto py-1"><?=single_cat_title();?></h2>
-                <?php endif;?>
-
-                <?php if( is_author() ): ?>
+        <?php if( is_author() ): ?>
                     <div class="writer-banner">
                         <div class="d-flex justify-content-center">
                             <div class="avatar-div anim-loader-skeleton">
@@ -35,6 +29,13 @@
                             <div class="anim-loader-skeleton"><small class="ft cl-grey">" <?=get_the_author_meta( 'description' );?> "</small></div>
                         </div>
                     </div>
+        <?php endif;?>
+
+        <div class="content">
+            <div class="main-content <?php echo is_active_sidebar( 'sidebar-1' ) ? '': 'full';?>">
+
+                <?php if( is_category() ): ?>
+                    <h2 class="ft ft ft-page-section m-auto py-1"><?=single_cat_title();?></h2>
                 <?php endif;?>
 
                 <?php

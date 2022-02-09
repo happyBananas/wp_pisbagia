@@ -1104,9 +1104,9 @@ li.breadcrumb-item a:hover{
 }
 
 .writer-banner{
-    padding: 15px 20px;
+    padding: 25px 35px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: row;
     border: 1px #ddd solid;
@@ -1116,7 +1116,7 @@ li.breadcrumb-item a:hover{
 .writer-banner img{
     height: 70px;
     width: 70px;
-    border-radius: 35px;
+    border-radius: 100px;
     margin: auto;
 }
 
@@ -2110,8 +2110,8 @@ a.article-author:hover{
     }
 
     .side-content ul.trending-section li span{
-        padding-right: 6px;
-        color: #777;
+        padding-right: 10px;
+        color: #aaa;
         font-weight: 700;
         font-family: 'Montserrat', sans-serif;
         display: flex;
@@ -2306,7 +2306,7 @@ a.article-author:hover{
     .writer-banner{
         padding: 15px 20px;
         margin-top: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: column;
     }
