@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+    <?php pisgia_set_post_views(get_the_ID());?>
+
     <div class="container main">
         <ul class="breadcrumb anim-loader-skeleton">
             <li class="breadcrumb-item">

@@ -72,6 +72,33 @@ html, body{
 }
 
 
+/* -------------------------------------------------WP-widget-recent-post---------------- */
+ul.wp-block-latest-posts__list.wp-block-latest-posts li{
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+ul.wp-block-latest-posts__list.wp-block-latest-posts li:first-of-type{
+    padding: 0;
+    padding-bottom: 10px;
+}
+ul.wp-block-latest-posts__list.wp-block-latest-posts li:last-of-type{
+    border-bottom: none;
+}
+ul.wp-block-latest-posts__list.wp-block-latest-posts li a{
+    font-size: 0.9rem;
+    color: #222;
+    text-decoration: none;
+}
+ul.wp-block-latest-posts__list.wp-block-latest-posts li a{
+    font-size: 0.9rem;
+    color: #222;
+}
+ul.wp-block-latest-posts__list.wp-block-latest-posts .wp-block-latest-posts__featured-image{
+    margin-right: 10px;
+}
+
+
 /* --------------------------------------------------WIDTH------------ */
 .w-100{
     width: 100% !important;

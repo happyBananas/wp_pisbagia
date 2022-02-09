@@ -1,5 +1,5 @@
 <?php
-class Pisgia_weather_widget1 extends WP_Widget {
+class Pisgia_weather_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             // widget ID
