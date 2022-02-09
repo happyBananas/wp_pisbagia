@@ -3,7 +3,6 @@
                         <div class="wrap-media-thumbnail">
                             <a href="<?=the_permalink();?>" class="anim-loader-skeleton">
                                 <?= get_the_post_thumbnail( null, array( '200', '120' ) ); ?>
-                                <!-- <img src="<?//=get_the_post_thumbnail_url();?>" style="width:100%">-->
                             </a>
                         </div>
                     <?php endif;?>
@@ -17,8 +16,6 @@
                                     <?=get_the_author_meta( 'user_firstname', $post->post_author );?>
                                 </a> &sdot; <?=get_the_date( 'd M Y' );?> &sdot;
                                 <?=pisgia_read_time() . " Menit Baca";?>
-                                <!-- <a href="<?//=get_category_link( get_the_category()[0]->term_id );?>" class="ctn-info-cat">
-                                    #<?//=get_the_category()[0]->name;?></a> -->
                             </p>
                         </div>
                         <div class="wrap-ctn-content anim-loader-skeleton">

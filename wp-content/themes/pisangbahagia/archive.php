@@ -17,18 +17,18 @@
         </ul>
 
         <?php if( is_author() ): ?>
-                    <div class="writer-banner">
-                        <div class="d-flex justify-content-center">
-                            <div class="avatar-div anim-loader-skeleton">
-                               <?=get_avatar( get_the_author_meta( 'ID' ), '', '', '', array( 'class' => 'article-pp') );?>
-                            </div>
-                        </div>
-                        <div class="px-5 writer-info">
-                            <div class="anim-loader-skeleton"><h2 class="ft m-0"><?=get_the_author_meta( 'first_name' )." ".get_the_author_meta( 'last_name' );?></h2></div>
-                            <div class="anim-loader-skeleton"><small class="ft-ro cl-lidarkred m-0"><?=count_user_posts( get_the_author_meta( 'ID' ) ) ?>&nbsp;Artikel</small></div>
-                            <div class="anim-loader-skeleton"><small class="ft cl-grey">" <?=get_the_author_meta( 'description' );?> "</small></div>
+                <div class="writer-banner">
+                    <div class="d-flex justify-content-center">
+                        <div class="avatar-div anim-loader-skeleton">
+                            <?=get_avatar( get_the_author_meta( 'ID' ), '', '', '', array( 'class' => 'article-pp') );?>
                         </div>
                     </div>
+                    <div class="px-5 writer-info">
+                        <div class="anim-loader-skeleton"><h2 class="ft m-0"><?=get_the_author_meta( 'first_name' )." ".get_the_author_meta( 'last_name' );?></h2></div>
+                        <div class="anim-loader-skeleton"><small class="ft-ro cl-lidarkred m-0"><?=count_user_posts( get_the_author_meta( 'ID' ) ) ?>&nbsp;Artikel</small></div>
+                        <div class="anim-loader-skeleton"><small class="ft cl-grey">" <?=get_the_author_meta( 'description' );?> "</small></div>
+                    </div>
+                </div>
         <?php endif;?>
 
         <div class="content">

@@ -1,5 +1,4 @@
 <?php
-    // echo paginate_links( array( 'total'=>$query->max_num_pages ) );
     the_posts_pagination(
         array(
             'mid_size' => 2,

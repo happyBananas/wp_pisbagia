@@ -736,6 +736,9 @@ ul.wp-block-latest-posts__list.wp-block-latest-posts .wp-block-latest-posts__fea
     display: flex;
     flex-direction: row;
     background-color: none;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    max-height: 17px;
     margin-bottom: 5px;
 }
 

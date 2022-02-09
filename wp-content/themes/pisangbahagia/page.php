@@ -34,5 +34,4 @@
         </div>
     </div>
 
-    <!-- <script>document.querySelectorAll('.wrap-ctn-content>p img').forEach(function(e){e.remove()});</script> -->
 <?php get_footer(); ?>

@@ -11,14 +11,12 @@
         </ul>
         <div class="content">
             <div class="main-content <?php echo is_active_sidebar( 'sidebar-1' ) ? '': 'full';?>">
-                <!-- judul artikel -->
                 <div class="anim-loader-skeleton">
                     <p class="ft article-title py-1">
                         <?=get_post()->post_title;?>
                     </p>
                 </div>
 
-                <!-- div penulis, tanggal dan media sosial -->
                 <div class="article-head">
                     <div class="article-le-tp anim-loader-skeleton">
                         <div class="avatar-img-div-article">
@@ -42,7 +40,6 @@
                     </div>
                 </div>
 
-                <!-- isi artikel -->
                 <div class="article-body ft-os article-bd anim-loader-skeleton">
                     <div class="main-img-ar w-100">
                         <?php
@@ -53,7 +50,6 @@
                             endif;
                         ?>
                     </div>
-                    <!--<p class="ft img-inform">Lorem ipsum dolor sit amet consectetur adipisicing elit. <a href="#">Sumber</a></p> -->
                     <?= the_content();?>
                 </div>
 
@@ -65,13 +61,6 @@
                         <?php endforeach; ?>
                     </ul>
                 </div>
-
-                <?php
-                    // echo "<pre>";
-                    // // print_r( get_the_category( get_post()->ID ) );
-                    // //echo get_avatar( get_post()->post_author, '', '', '', array( 'class' => 'article-pp' ) );
-                    // echo "</pre>";
-                ?>
 
             </div>
 
