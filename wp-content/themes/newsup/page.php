@@ -9,7 +9,7 @@
  *
  * @package Newsup
  */
-get_header(); 
+get_header();
 ?>
 <!--==================== Newsup breadcrumb section ====================-->
 <?php get_template_part('index','banner'); ?>
@@ -24,22 +24,22 @@ get_header();
 			<?php the_content(); endwhile; } } else {?>
 			<div class="col-md-8">
 				<div class="mg-card-box padding-20">
-			<?php while ( have_posts() ) : the_post(); 
+			<?php while ( have_posts() ) : the_post();
             	  the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
 				  the_content();
-				
+
 				  wp_link_pages(array(
         'before' => '<div class="link btn-theme">' . esc_html__('Pages:', 'newsup'),
         'after' => '</div>',
     ));
-				
+
 				endwhile;
 				newsup_page_edit_link();
 
 				if (comments_open() || get_comments_number()) :
                   comments_template();
                   endif;
-			?>	
+			?>
 		</div>
 			</div>
 			<!--Sidebar Area-->

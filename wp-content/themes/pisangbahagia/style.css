@@ -99,6 +99,15 @@ ul.wp-block-latest-posts__list.wp-block-latest-posts .wp-block-latest-posts__fea
 }
 
 
+/* wp seperator */
+hr.wp-block-separator{
+    unicode-bidi: unset ;
+    border-top: 1px solid #dedede;
+    border-bottom: none;
+    width: 50%;
+    border-width: 1px;
+}
+
 /* --------------------------------------------------WIDTH------------ */
 .w-100{
     width: 100% !important;
