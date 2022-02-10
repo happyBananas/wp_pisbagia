@@ -62,6 +62,17 @@
                     </ul>
                 </div>
 
+                <?php if( get_the_tags( get_post()->ID )):?>
+                    <div class="article-footer anim-loader-skeleton">
+                        <p class="ft ft-article-cat">Tags:</p>
+                        <ul>
+                            <?php foreach( get_the_tags( get_post()->ID ) as $tag ):?>
+                            <li><a href="<?=get_tag_link( $tag->term_id );?>"><button type="button" class="ft btn-article-cat">#<?=$tag->name;?></button></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif;?>
+
             </div>
 
             <?php if( is_active_sidebar( 'sidebar-1' ) ):?>

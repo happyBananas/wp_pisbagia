@@ -9,6 +9,11 @@
                 <li class="breadcrumb-item active"><?=single_cat_title();?></li>
             <?php endif;?>
 
+            <?php if( is_tag() ): ?>
+                <li class="breadcrumb-item"><a href="<?=home_url().'/kategori';?>">Tag</a></li>
+                <li class="breadcrumb-item active"><?=single_tag_title();?></li>
+            <?php endif;?>
+
             <?php if( is_author() ): ?>
                 <li class="breadcrumb-item">Author /&nbsp;</li>
                 <li class="breadcrumb-item active"><?=get_the_author_meta( 'first_name' );?></li>
@@ -36,6 +41,10 @@
 
                 <?php if( is_category() ): ?>
                     <h2 class="ft ft ft-page-section m-auto py-1"><?=single_cat_title();?></h2>
+                <?php endif;?>
+
+                <?php if( is_tag() ): ?>
+                    <h2 class="ft ft ft-page-section m-auto py-1">#<?=single_tag_title();?></h2>
                 <?php endif;?>
 
                 <?php

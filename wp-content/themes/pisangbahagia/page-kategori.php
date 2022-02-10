@@ -27,6 +27,16 @@
 
                 <?php endforeach; ?>
 
+                <?php foreach(get_tags() as $tag): ?>
+
+                    <?php if( substr( $tag->name, 0, 1 ) == $as || substr( $tag->name, 0, 1 ) == strtoupper( $as ) ):?>
+
+                        <div><a class="ft" href="<?=get_tag_link($tag->term_id)?>">#<?=$tag->name?></a></div>
+
+                    <?php endif; ?>
+
+                <?php endforeach; ?>
+
             </div>
 
         <?php endforeach; ?>
