@@ -60,18 +60,22 @@
                         <li><a href="<?=get_category_link( $category->cat_ID );?>"><button type="button" class="ft btn-article-cat"><?=$category->name;?></button></a></li>
                         <?php endforeach; ?>
                     </ul>
-                </div>
 
-                <?php if( get_the_tags( get_post()->ID )):?>
-                    <div class="article-footer anim-loader-skeleton">
+                    <?php if( get_the_tags( get_post()->ID )):?>
                         <p class="ft ft-article-cat">Tags:</p>
                         <ul>
                             <?php foreach( get_the_tags( get_post()->ID ) as $tag ):?>
                             <li><a href="<?=get_tag_link( $tag->term_id );?>"><button type="button" class="ft btn-article-cat">#<?=$tag->name;?></button></a></li>
                             <?php endforeach; ?>
                         </ul>
-                    </div>
-                <?php endif;?>
+                    <?php endif;?>
+                </div>
+
+                <?php
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                ?>
 
             </div>
 

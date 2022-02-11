@@ -1179,8 +1179,10 @@ li.breadcrumb-item a:hover{
 
 .article-footer{
     width: 100%;
-    padding: 0 0 1em 0;
+    margin: 1em 0;
+    padding: 1em 0 2em 0;
     border-bottom:1px solid #ddd;
+    border-top:1px solid #ddd;
 }
 
 .article-footer ul{
@@ -1677,6 +1679,7 @@ a.article-author:hover{
 
 .article-bd{
     font-size: 1em;
+    padding-bottom: 1em;
     font-weight: 500;
     color: #222;
     text-align: left;
@@ -1685,7 +1688,7 @@ a.article-author:hover{
 .ft-article-cat{
     font-size: 1em;
     font-weight: 600;
-    margin: 1.5em 0 0.3em 0;
+    margin: 0.5em 0 0.5em 0;
 }
 
 .img-inform{
