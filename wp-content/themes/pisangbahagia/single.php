@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="article-ri-bt anim-loader-skeleton">
-                        <button type="button" class="medsos bg-white">
+                        <!-- <button type="button" class="medsos bg-white">
                             <i class="fa fa-facebook-official"></i>
                         </button>
                         <button type="button" class="medsos bg-white">
@@ -36,7 +36,7 @@
                         </button>
                         <button type="button" class="medsos bg-white">
                             <i class="fa fa-whatsapp"></i>
-                        </button>
+                        </button> -->
                     </div>
                 </div>
 
