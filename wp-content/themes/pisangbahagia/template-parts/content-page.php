@@ -8,7 +8,15 @@
 
 
                 <?php else:?>
-                    <div class="list-main-content w-100">
+                    <?php if( is_singular() ):?>
+
+                        <div class="article-body ft-os article-bd anim-loader-skeleton">
+                            <?= the_content();?>
+                        </div>
+
+                    <?php else: ?>
+
+                        <div class="list-main-content w-100">
                         <?php if( has_post_thumbnail() ): ?>
                             <div class="wrap-media-thumbnail">
                                 <a href="<?=the_permalink();?>" class="anim-loader-skeleton">
@@ -33,5 +41,7 @@
                             </div>
                         </div>
                     </div>
+
+                    <?php endif;?>
 
                 <?php endif;?>

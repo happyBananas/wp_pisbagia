@@ -1191,7 +1191,7 @@ li.breadcrumb-item a:hover{
 .article-body img.main-img-ar{
     width: 100%;
     height: 100%;
-    max-height: 350px;
+    /* max-height: 350px; */
     filter: grayscale(40%);
 }
 
@@ -1383,29 +1383,30 @@ li.breadcrumb-item a:hover{
     color: #03a138;
 }
 
-ul.footer-static-sites{
+footer ul{
     font-family: 'Montserrat', sans-serif;
     display: flex;
 }
 
-ul.footer-static-sites li{
+footer ul li{
     list-style: none;
 }
 
-ul.footer-static-sites li:not(:last-of-type)::after{
+footer ul li:not(:last-of-type)::after{
     content: "|";
     font-weight: 300;
     color: #ddd;
 }
 
-ul.footer-static-sites li a{
+footer ul li a{
     font-size: 0.8rem;
     font-weight: 500;
     color: #ddd;
     text-decoration: none;
+    margin: 0 3px;
 }
 
-ul.footer-static-sites li a:hover{
+footer ul li a:hover{
     color: #ffffff;
 }
 
@@ -2432,7 +2433,7 @@ a.article-author:hover{
         color: #47a8d4;
     }
 
-    ul.footer-static-sites li a{
+    footer ul li a{
         font-size: 0.7rem;
         font-weight: 500;
         color: #ddd;
