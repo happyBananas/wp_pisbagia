@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="<?=bloginfo('template_url');?>/assets/img/logo_pisangbahagia_gurita_20_1.png">
+    <link rel="icon" href="<?=bloginfo('template_url');?>/assets/img/pisangbahagia_logo2_100px.jpg">
     <?php wp_head(); ?>
 </head>
 <body style="overflow-y: hidden;">

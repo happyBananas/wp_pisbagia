@@ -25,11 +25,11 @@ window.addEventListener('load', function(){
         }else{
             alert("Geolocation is not supported by this browser.");
         }
-    }    
+    }
 
-    function yourLocation(position){    
+    function yourLocation(position){
         const http = new XMLHttpRequest();
-        const url = "http://api.openweathermap.org/data/2.5/weather?lat="+position.coords.latitude+"&lon="+position.coords.longitude+"&lang=id&units=metric&APPID=f130a0181a507d474eda2f2e5a6eaa61";
+        const url = "https://api.openweathermap.org/data/2.5/weather?lat="+position.coords.latitude+"&lon="+position.coords.longitude+"&lang=id&units=metric&APPID=f130a0181a507d474eda2f2e5a6eaa61";
         http.responseType = "json";
         http.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -37,9 +37,9 @@ window.addEventListener('load', function(){
                 var obj = {
                     "city" : r.name,
                     "country" : "Indonesia",
-                    "time" : getTimeNow(),              
+                    "time" : getTimeNow(),
                     "weather" : r.weather[0].description,
-                    "icon" : "http://openweathermap.org/img/wn/"+r.weather[0].icon+".png",
+                    "icon" : "https://openweathermap.org/img/wn/"+r.weather[0].icon+".png",
                     "main_temp" : r.main.temp+"&deg;C",
                     "humidity" : "<i class='fa fa-tint'></i> "+r.main.humidity+"%",
                     "wind_speed" : "<i class='fa fa-location-arrow'></i> "+r.wind.speed+" m/d"
@@ -52,7 +52,7 @@ window.addEventListener('load', function(){
                                         "<div class='hs-bar'>"+
                                             "<div class='bar'></div>"+
                                         "</div>"+
-                                    "</div>"+   
+                                    "</div>"+
                                     "<div class='weather-section'>"+
                                         "<div class='wrap-wea-info'>"+
                                             "<p class='ft ft-wea-location'>"+ obj.city +", "+ obj.country +"</p>"+
@@ -73,7 +73,7 @@ window.addEventListener('load', function(){
             }
         };
         http.open("GET", url, true);
-        http.send();          
+        http.send();
     }
 
     getLocation();
