@@ -31,7 +31,11 @@
                             <div class="wrap-ctn-info anim-loader-skeleton">
                                 <p class="ft-po ctn-info">
                                     <a href="<?=get_author_posts_url( $post->post_author )?>" class="ctn-info-cat">
-                                        <?=get_the_author_meta( 'user_firstname', $post->post_author );?>
+                                        <?php if( !empty( get_the_author_meta( 'user_firstname', $post->post_author ) ) && !empty( get_the_author_meta( 'user_lastname', $post->post_author )) ):?>
+                                            <?=get_the_author_meta( 'user_firstname', $post->post_author );?>
+                                        <?php else:?>
+                                            <?=get_the_author_meta( 'nickname', $post->post_author );?>
+                                        <?php endif;?>
                                     </a> &sdot; <?=get_the_date( 'd M Y' );?> &sdot;
                                     <?=pisgia_read_time() . " Menit Baca";?>
                                 </p>

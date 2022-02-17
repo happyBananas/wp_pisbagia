@@ -23,7 +23,15 @@
                             <?=get_avatar( get_post()->post_author, '', '', '', array( 'class' => 'article-pp' )  );?>
                         </div>
                         <div class="article-au-ti-wrap">
-                            <a href="<?=get_author_posts_url( $post->post_author )?>" class="ft-ro article-author active"><b><?=get_the_author_meta( 'user_firstname', get_post()->post_author )?>&nbsp;<?=get_the_author_meta( 'user_lastname', get_post()->post_author )?></b></a>
+                            <a href="<?=get_author_posts_url( $post->post_author )?>" class="ft-ro article-author active">
+                                <b>
+                                    <?php if( !empty( get_the_author_meta( 'user_firstname', get_post()->post_author ) ) && !empty( get_the_author_meta( 'user_lastname', get_post()->post_author )) ):?>
+                                        <?=get_the_author_meta( 'user_firstname', get_post()->post_author )?>&nbsp;<?=get_the_author_meta( 'user_lastname', get_post()->post_author )?>
+                                    <?php else: ?>
+                                        <?=get_the_author_meta( 'nickname', get_post()->post_author )?>
+                                    <?php endif; ?>
+                                </b>
+                            </a>
                             <p class="ft-ro article-time"><?=substr( get_post()->post_date, 0, 16 );?></p>
                         </div>
                     </div>

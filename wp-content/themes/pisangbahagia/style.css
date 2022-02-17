@@ -1,7 +1,7 @@
 /*
 Theme Name: Pisang Bahagia
 Text Domain: pisangbahagia
-Version: 1.0
+Version: 1.01
 Description: This is first version of this theme pisangbahagia
 Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
 Author: happy_bananas
@@ -116,7 +116,7 @@ ul.wp-block-latest-posts__list.wp-block-latest-posts .wp-block-latest-posts__fea
 
 
 
-/* wp seperator */
+/* ------------------------------------------------- wp seperator  -------------------------------------------------*/
 hr.wp-block-separator{
     unicode-bidi: unset ;
     border-top: 1px solid #dedede;
@@ -124,6 +124,17 @@ hr.wp-block-separator{
     width: 50%;
     border-width: 1px;
 }
+
+/* ------------------------------------------------- figcaption ------------------------------------------------- */
+.wp-block-image figcaption{
+    color: #666;
+    font-size: 0.9em;
+}
+.wp-block-image .aligncenter>figcaption{
+    text-align: center;
+}
+
+
 
 
 /* --------------------------------------------------WIDTH------------ */
@@ -396,29 +407,29 @@ hr.wp-block-separator{
     display: none; /* for Chrome, Safari, and Opera */
 }
 
-.navbar ul .nav.active{
+.navbar ul li.active{
     background-color: #222;
     color: #fff;
 }
 
-.navbar ul .nav {
+.navbar ul li {
     padding: 10px;
     color: #222;
     transition: 0.3s ease;
 }
 
-.navbar ul .nav:hover{
+.navbar ul li:hover{
     background-color: #222;
     color: #fff;
 }
 
-.navbar ul .nav a{
+.navbar ul li a{
     color:inherit;
     font-size: 1em;
     text-decoration: none;
 }
 
-.navbar ul .nav a:hover{
+.navbar ul li a:hover{
     font-size: 1em;
     color: inherit;
 }
@@ -745,7 +756,7 @@ hr.wp-block-separator{
     transition: 0.5s ease all;
 }
 
-.banner-content a{
+.banner-content a, .banner-content-half a{
     width: 100%;
     display: flex;
     background-color: #222;
@@ -1108,13 +1119,17 @@ ul.breadcrumb{
     /* border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd; */
     font-family: 'Montserrat', sans-serif;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     font-size: 0.75em;
     font-weight: 600;
 }
 
 li.breadcrumb-item{
     list-style: none;
+    white-space: nowrap;
+    /* width: 100%; */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 li.breadcrumb-item a::after{
@@ -1863,13 +1878,13 @@ a.article-author:hover{
         display: none; /* for Chrome, Safari, and Opera */
     }
 
-    .navbar ul .nav a{
+    .navbar ul li a{
         color:inherit;
         font-size: 0.8em;
         text-decoration: none;
     }
 
-    .navbar ul .nav a:hover{
+    .navbar ul li a:hover{
         font-size: 0.8em;
         color: inherit;
     }
@@ -2140,6 +2155,7 @@ a.article-author:hover{
         width: 100%;
         max-width: 425px;
         padding: 0 10px;
+        margin-top: 25px;
         display: inline-block;
     }
 
@@ -2463,6 +2479,7 @@ a.article-author:hover{
     }
 
     .banner-ctn.sm{
+        max-width: 170px;
         font-size: 1em;
         line-height: 1em;
     }
