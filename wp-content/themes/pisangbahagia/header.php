@@ -17,7 +17,7 @@
                     <button type="button" class="toogle view-mode" title="Mode Gelap">
                         <span></span>
                     </button>
-                    <button type="button" class="btn-nav-search-top">
+                    <button type="button" aria-label="Search button mobile" class="btn-nav-search-top">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
                 </div>

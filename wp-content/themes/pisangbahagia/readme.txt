@@ -34,6 +34,37 @@ Tema yang simple, solid dan mendukung mobile view. Cocok digunakan untuk website
         > figcaption merubah ukurannya menjadi lebih kecil dan warna juga lebih soft --> ok
 *
 
+= 1.02 =
+* Released: Februari 21, 2022
+    == Update log: [ Internal bug and improvement ]  ==
+
+    Performace
+    > [banner-img] img pada banner tidak punya size yang jelas (tidak ada width dan height pada html), buat jadi ada, ubah method di banner --> ok
+    > [image] ubah jadi .webP atau AVIF, ini tergantung mau diubah atau engga --> ok
+    > [image] klo upload buat thumbnail pake ukuran maximum contoh 650x300, jangan pake ukuran asli gambarnya, ubah di wp ukuran gambar full jadi 665px --> ok
+
+    Accessibility
+    > [btn-nav-search-top] tidak ada attribut aria-label --> ok
+    > [btn-sroll-top] tidak ada attribut aria-label, ditambahkan aria-label --> ok
+    > [wp-block-latest-posts__list > li ] tidak ada attribut aria-label, --> fail
+    > [text] beberapa text dengan color 777 warnanya hampir sama kek fff jadi diubah ke 555 --> ok
+    > [<h3>Oops Hasil tidak ditemukan</h3>] tidak sequensialy descending order, ubah jadi menggunakan<p> --> ok
+
+     SEO
+    > [banner-img] img pada banner tidak punya alt tag, buat jadi ada --> ok
+
+    UNFIX BUG
+    > weather hilang
+    > font google bikin lemot, CDN?
+    > font awesome bikin lemot, CDN?
+    > static resource bikin lemot, CDN?
+    > [wp-block-latest-posts__list > li ] tidak ada attribut aria-label, --> fail
+    > [disqus plugin] masalah cors origin error pada disqus --> fail
+    > [single.php] masalah pic pada head setiap artikel gk ada keterangan gambarnya dari mana url nya, keterangan dllnya --> fail
+    > [single] contrast tulisan belum baik, font size dan font-family keknya perlu diubah, ukuran dan jarak2 di single juga kurang srek --> fail
+
+*
+
 https://github.com/happyBananas/wp_pisbagia/tree/master
 
 == Copyright ==

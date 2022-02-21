@@ -80,7 +80,7 @@ html, body{
 }
 
 .article-body blockquote p{
-    color: #666;
+    color: #555;
 }
 
 
@@ -127,7 +127,7 @@ hr.wp-block-separator{
 
 /* ------------------------------------------------- figcaption ------------------------------------------------- */
 .wp-block-image figcaption{
-    color: #666;
+    color: #555;
     font-size: 0.9em;
 }
 .wp-block-image .aligncenter>figcaption{
@@ -1640,7 +1640,7 @@ a.ft-404:hover{
 }
 
 .ft-list-trend:hover{
-    color:#777;
+    color:#555;
 }
 
 .ctn-header{
@@ -1666,12 +1666,12 @@ a.ft-404:hover{
     font-size: 0.8em;
     font-weight: 400;
     margin: auto;
-    color: #777;
+    color: #555;
 }
 
 .ctn-info-cat{
     margin: auto;
-    color: #777;
+    color: #555;
     text-decoration: none;
 }
 
@@ -1697,7 +1697,7 @@ a.ft-404:hover{
     font-size: 0.8em;
     font-weight: 400;
     margin: 0.21em auto;
-    color: #777;
+    color: #333;
 }
 
 .article-author{
@@ -2503,12 +2503,12 @@ a.article-author:hover{
         font-size: 0.6em;
         font-weight: 400;
         margin: auto;
-        color: #777;
+        color: #555;
     }
 
     .ctn-info-cat{
         margin: auto;
-        color: #777;
+        color: #555;
         text-decoration: none;
     }
 
@@ -2814,7 +2814,7 @@ background: linear-gradient(27deg, rgba(113,162,233,0) 10%, rgba(113,162,233,0.1
     font-size: 0.8em;
     margin: 0 0 0.4em 10px;
     font-weight: 500;
-    color: #777;
+    color: #555;
 }
 
 .ft-wea-weather{
@@ -2834,7 +2834,7 @@ background: linear-gradient(27deg, rgba(113,162,233,0) 10%, rgba(113,162,233,0.1
     font-size: 0.8em;
     margin: 0 0;
     font-weight: 400;
-    color: #777;
+    color: #555;
 }
 
 @media only screen and (max-width: 425px){

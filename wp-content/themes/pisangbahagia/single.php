@@ -6,7 +6,7 @@
         <ul class="breadcrumb anim-loader-skeleton">
             <li class="breadcrumb-item">
                 <a href="<?=home_url();?>">Beranda</a>
-                <span class="ft-po cl-grey ft-b-4"><?=get_post()->post_title;?></span>
+                <span class="ft-po ft-b-4"><?=get_post()->post_title;?></span>
             </li>
         </ul>
         <div class="content">

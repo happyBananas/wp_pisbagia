@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <button type="button" class="btn-sroll-top">
+    <button type="button" aria-label="Button Scroll top Top" class="btn-sroll-top">
         <i class="fa fa-angle-up" aria-hidden="true"></i>
     </button>
 

@@ -17,7 +17,7 @@
                     </small>
                 </div>
                 <?php if( has_post_thumbnail() ) :?>
-                    <img class="banner-img-lg" src="<?=get_the_post_thumbnail_url();?>">
+                    <?= get_the_post_thumbnail( null, 'large', array( 'class' => 'banner-img-lg' ) ); ?>
                 <?php endif;?>
             </a>
         </div>
