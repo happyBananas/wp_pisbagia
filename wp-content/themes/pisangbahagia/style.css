@@ -1,14 +1,14 @@
 /*
 Theme Name: Pisang Bahagia
-Text Domain: pisangbahagia
-Version: 1.01
+Text Domain: lonecodex
+Version: 1.03
 Description: This is first version of this theme pisangbahagia
 Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
 Author: happy_bananas
-Author URI: https://pisangbahagia.com
-Theme URI: https://pisangbahagia.com
+Author URI: https://lonecodex.com
+Theme URI: https://lonecodex.com
 License: GNU General Public License v2 or later
-License URI: http://pisangbahagia.com
+License URI: http://lonecodex.com
 
 */
 
@@ -407,31 +407,20 @@ hr.wp-block-separator{
     display: none; /* for Chrome, Safari, and Opera */
 }
 
-.navbar ul li.active{
-    background-color: #222;
-    color: #fff;
-}
-
-.navbar ul li {
+.navbar ul li a{
+    display: block;
     padding: 10px;
     color: #222;
-    transition: 0.3s ease;
-}
-
-.navbar ul li:hover{
-    background-color: #222;
-    color: #fff;
-}
-
-.navbar ul li a{
-    color:inherit;
     font-size: 1em;
+    transition: 0.2s ease-in-out;
     text-decoration: none;
 }
 
+.navbar ul li.active a,
+.navbar ul li.active a:hover,
 .navbar ul li a:hover{
-    font-size: 1em;
-    color: inherit;
+    color: #fff;
+    background-color: #222;
 }
 
 .btn-nav-search-top{
@@ -1839,28 +1828,6 @@ a.article-author:hover{
         box-sizing: border-box;
     }
 
-    /* .navbar{
-        height: 0px;
-        box-sizing: border-box;
-        display: block;
-        text-align: center;
-        transition: 0.5s ease-in-out;
-        /* border-bottom: 1px solid #222;
-    } */
-
-    /* .navbar.show{
-        height: 200px;
-        box-sizing: border-box;
-        display: block;
-        text-align: center;
-        transition: 0.5s ease-in-out;
-    } */
-/*
-    .navbar ul {
-        display: inline-block;
-        list-style: none;
-        width: 100%;
-    } */
 
     .navbar{
         box-shadow: 0px 3px 5px 0px var(--color_shadow_darker);
@@ -1879,14 +1846,11 @@ a.article-author:hover{
     }
 
     .navbar ul li a{
-        color:inherit;
         font-size: 0.8em;
-        text-decoration: none;
     }
 
     .navbar ul li a:hover{
         font-size: 0.8em;
-        color: inherit;
     }
 
     .nav-search{

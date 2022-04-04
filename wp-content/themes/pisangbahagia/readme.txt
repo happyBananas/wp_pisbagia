@@ -1,10 +1,10 @@
 === pisangbahagia ===
-Contributors: pisangbahagiadotcom
+Contributors: lonecodexdotcom
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6
 Stable tag: 1.0
-License URI: http://pisangbahagia.com
+License URI: http://lonecodex.com
 
 == Description ==
 Tema yang simple, solid dan mendukung mobile view. Cocok digunakan untuk website blog dan berita
@@ -52,6 +52,25 @@ Tema yang simple, solid dan mendukung mobile view. Cocok digunakan untuk website
 
      SEO
     > [banner-img] img pada banner tidak punya alt tag, buat jadi ada --> ok
+
+    UNFIX BUG
+    > weather hilang
+    > font google bikin lemot, CDN?
+    > font awesome bikin lemot, CDN?
+    > static resource bikin lemot, CDN?
+    > [wp-block-latest-posts__list > li ] tidak ada attribut aria-label, --> fail
+    > [disqus plugin] masalah cors origin error pada disqus --> fail
+    > [single.php] masalah pic pada head setiap artikel gk ada keterangan gambarnya dari mana url nya, keterangan dllnya --> fail
+    > [single] contrast tulisan belum baik, font size dan font-family keknya perlu diubah, ukuran dan jarak2 di single juga kurang srek --> fail
+
+*
+
+= 1.03 =
+* Released: April 04, 2022
+    == Update log: [ Internal bug and improvement ]  ==
+
+    fixed BUG
+    > list  main menu (main navbar) weird behavior, fixed --> ok
 
     UNFIX BUG
     > weather hilang
